@@ -4,5 +4,6 @@ mkdir -pv ~/Library/Scripts
 cp -v com.ndaversa.cycle.py.plist ~/Library/LaunchAgents/
 cp -v cycle.py ~/Library/Scripts/
 cp -rv vendor ~/Library/Scripts/
+chmod +x ~/Library/Scripts/cycle.py
 launchctl load ~/Library/LaunchAgents/com.ndaversa.cycle.py.plist
 launchctl start com.ndaversa.cycle.py
