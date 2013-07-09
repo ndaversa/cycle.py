@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+mkdir -pv ~/Library/Scripts
+cp -v com.ndaversa.cycle.py.plist ~/Library/LaunchAgents/
+cp -v cycle.py ~/Library/Scripts/
+cp -rv vendor ~/Library/Scripts/
+launchctl stop com.ndaversa.cycle.py
+launchctl unload ~/Library/LaunchAgents/com.ndaversa.cycle.py.plist
+launchctl load ~/Library/LaunchAgents/com.ndaversa.cycle.py.plist
+launchctl start com.ndaversa.cycle.py
