@@ -1,12 +1,6 @@
 #!/usr/bin/env python
-
-try:
-    import sys
-    import urllib2
-    from vendor.wemo import get, on, off
-except Exception,e:
-	print 'Unmet dependency:', e
-	sys.exit(1)
+import sys
+import urllib2
 
 def connected():
     try:
@@ -20,7 +14,9 @@ def connected():
 if not connected():
     print "No internet connected detected :("
 
+    from vendor.wemo import get, on, off
     powered = get()
+
     if powered:
         print "Turning WeMo off"
         off()
