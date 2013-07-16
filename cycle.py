@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import sys
 import urllib2
-import time
-import datetime
 
 def connected():
     try:
@@ -12,21 +10,21 @@ def connected():
     except urllib2.URLError as err: pass
     return False
 
-timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 
 if not connected():
+    import time
+    import datetime
+    from vendor.wemo import get, on, off
+
+    timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
     print timestamp, "No internet connected detected :("
 
-    from vendor.wemo import get, on, off
     powered = get()
-
     if powered:
-        print "Turning WeMo off"
+        print timestamp, "Turning WeMo off"
         off()
     else:
-        print "Turning WeMo on"
+        print timestamp, "Turning WeMo on"
         on()
-else:
-    print timestamp, "Internet connection detected :)"
 
 sys.exit(0)
