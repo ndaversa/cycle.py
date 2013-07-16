@@ -17,10 +17,10 @@
 	<integer>300</integer>
 
   <key>StandardOutPath</key>
-  <string>/Users/ndaversa/Dropbox/cycle.py/cycle.out</string>
+  <string>/Users/ndaversa/Dropbox/cycle.py/cycle.out.log</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/ndaversa/Dropbox/cycle.py/cycle.err</string>
+  <string>/Users/ndaversa/Dropbox/cycle.py/cycle.error.log</string>
 
 </dict>
 </plist>
